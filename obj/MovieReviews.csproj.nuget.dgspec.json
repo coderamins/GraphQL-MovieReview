@@ -63,7 +63,7 @@
             },
             "GraphQL.Server.Transports.AspNetCore.SystemTextJson": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[5.0.2, )"
             },
             "GraphQL.Server.UI.Altair": {
               "target": "Package",

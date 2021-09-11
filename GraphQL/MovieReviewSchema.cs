@@ -1,6 +1,7 @@
 
 using System;
 using GraphQL.Types;
+using MovieReviews.GraphQL;
 
 public class MovieReviewSchema : Schema
 {

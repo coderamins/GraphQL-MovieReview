@@ -13,6 +13,12 @@ using Microsoft.Extensions.Logging;
 using GraphQL;
 using Microsoft.Extensions.DependencyInjection;
 using GraphQL.Server;
+using Microsoft.AspNetCore.Http;
+using Autofac;
+using MovieReviews.Database;
+using MovieReviews.Repository;
+using GraphQL.NewtonsoftJson;
+using MovieReviews.GraphQL;
 
 namespace MovieReviews
 {
@@ -71,10 +77,21 @@ namespace MovieReviews
 
             app.UseGraphQLAltair();
 
+            app.UseGraphQL<MovieReviewSchema>();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+        }
+
+        public virtual void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>().SingleInstance();
+            builder.RegisterType<MovieRepository>().As<IMovieRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<DocumentWriter>().AsImplementedInterfaces().SingleInstance();
+            builder.RegisterType<QueryObject>().AsSelf().SingleInstance();
+            builder.RegisterType<MovieReviewSchema>().AsSelf().SingleInstance();
         }
     }
 }

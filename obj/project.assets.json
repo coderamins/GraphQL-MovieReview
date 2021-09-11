@@ -2191,7 +2191,7 @@
       "GraphQL >= 4.6.0",
       "GraphQL.AspNet >= 0.6.3-beta",
       "GraphQL.Server.Transports.AspNetCore >= 5.0.2",
-      "GraphQL.Server.Transports.AspNetCore.SystemTextJson >= *",
+      "GraphQL.Server.Transports.AspNetCore.SystemTextJson >= 5.0.2",
       "GraphQL.Server.UI.Altair >= 5.0.2",
       "GraphQL.Server.Ui.GraphiQL >= 5.0.2",
       "GraphQL.Server.Ui.Playground >= 5.0.2",
@@ -2264,7 +2264,7 @@
           },
           "GraphQL.Server.Transports.AspNetCore.SystemTextJson": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[5.0.2, )"
           },
           "GraphQL.Server.UI.Altair": {
             "target": "Package",
